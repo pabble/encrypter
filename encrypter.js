@@ -1,18 +1,22 @@
-var unicode = [];
-for (i = 0; i < 1114112; i++) { unicode.push(String.fromCharCode(i)); };
-
+//change values as desired
 var seed = {
     dec: 777,
     bin: 1001011001
 }
 
+var unicode = [];
+for (i = 0; i < 1114112; i++) { unicode.push(String.fromCharCode(i)); };
+
 function encrypt (input, seed) {
     var array = stringtoarray(input);
+    var sum = seed.dec;
     var bins = stringtoarray(seed.bin);
 
     for (var i = 0; i < array.length; i++){
         if (bins[redux(i, bins.length)] == 1){
             //sumate
+            
+
         }else{
             //restate
         }
@@ -28,32 +32,6 @@ console.log("encrypted: " + encrypt("pÄnis", seed));
 
 
 
-function offsetarray (array, index, sum, sign){
-    var result = 0;
-    if (sign == 1){
-        var result = index + sum;
-    }else{
-        var result = index - sum;
-    }
-
-    if (sign == 1) {
-        if (result > array.length){
-            while (result > array.length){
-                result -= array.length;
-            }
-        }
-    }
-
-    if (sign == 0) {
-        if (result < 0){
-            while (result < 0){
-                result += array.length;
-            }
-        }
-    }
-
-    return result;
-}
 
 function stringtoarray(string){
     var arr = [];
@@ -83,3 +61,31 @@ function redux(x, range){
     }
     return x;
 }
+
+
+// function offsetarray (array, index, sum, sign){
+//     var result = 0;
+//     if (sign == 1){
+//         var result = index + sum;
+//     }else{
+//         var result = index - sum;
+//     }
+
+//     if (sign == 1) {
+//         if (result > array.length){
+//             while (result > array.length){
+//                 result -= array.length;
+//             }
+//         }
+//     }
+
+//     if (sign == 0) {
+//         if (result < 0){
+//             while (result < 0){
+//                 result += array.length;
+//             }
+//         }
+//     }
+
+//     return result;
+// }

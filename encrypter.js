@@ -6,13 +6,17 @@ var seed = {
     bin: 1001011001
 }
 
-function encrypt (string, seed) {
-    
+function encrypt (input, seed) {
+    var array = stringtoarray(input);
 
-    return "encrypted: " + encrypted;
+    for (var i = 0; i < array.length; i++){
+        
+    }
+
+    return arraytostring(array);
 }
 
-console.log(encrypt("penis", seed));
+console.log("encrypted: " + encrypt("pÄnis", seed));
 
 
 
@@ -52,4 +56,12 @@ function stringtoarray(string){
         arr.push(string.charAt(i));
     }
     return arr;
+}
+
+function arraytostring(array){
+    var str = "";
+    for (var i = 0; i < array.length; i++){
+        str = str + array[i];
+    }
+    return str;
 }

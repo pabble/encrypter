@@ -11,7 +11,11 @@ function encrypt (input, seed) {
     var bins = stringtoarray(seed.bin);
 
     for (var i = 0; i < array.length; i++){
-        // if (bins[i])
+        if (bins[redux(i, bins.length)] == 1){
+            //sumate
+        }else{
+            //restate
+        }
     }
 
     return arraytostring(array);
@@ -67,6 +71,15 @@ function arraytostring(array){
     return str;
 }
 
-function redux(x, y){
-    
+function redux(x, range){
+    if (x > range){
+        while (x > range){
+            x -= range;
+        }
+    }else if (x < 0){
+        while (x < 0){
+            x += range;
+        }
+    }
+    return x;
 }

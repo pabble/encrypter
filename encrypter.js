@@ -3,33 +3,21 @@ for (i = 0; i < 1114112; i++) { unicode.push(String.fromCharCode(i)); };
 
 var seed = {
     dec: 777,
-    bin: 0100100
+    bin: 1001011001
 }
 
 function encrypt (string, seed) {
-    var encrypted = string;
-    var signs = stringtoarray(seed.bin);
-    var arrayed = stringtoarray(string);
-
-    for (var i = 0; i < signs.length; i++){
-        if (signs[i] == 1){
-            signs[i] = true;
-        }else{
-            signs[i] = false;
-        }
-    }
-
-    for (var i = 0; i < string.length; i++){
-        var sign;
-        var sd = seed.dec;
-        
-        
-    }
+    
 
     return "encrypted: " + encrypted;
 }
 
 console.log(encrypt("penis", seed));
+
+
+
+
+
 
 function offsetarray (array, index, sum, sign){
     var result = 0;

@@ -1,6 +1,6 @@
 //change values as desired
 var seed = {
-    dec: 777,
+    dec: 1,
     bin: "1001011001"
 }
 
@@ -13,19 +13,54 @@ function encrypt (input, seed) {
     var bins = stringtoarray(seed.bin);
 
     for (var i = 0; i < array.length; i++){
+        var currentIndex = searchChar(array[i], unicode);
+        var newIndex;
         if (bins[redux(i, bins.length)] == 1){
             //sumate
+            newIndex = currentIndex + sum;
+            newIndex = redux(newIndex, unicode.length);
 
         }else{
             //restate
+            newIndex = currentIndex - sum;
+            newIndex = redux(newIndex, unicode.length);
 
         }
+        array[i] = unicode[newIndex];
     }
 
     return arraytostring(array);
 }
 
-console.log("encrypted: " + encrypt("penis dabit cul petit", seed));
+function decrypt (input, seed){
+    var array = stringtoarray(input);
+    var sum = seed.dec;
+    var bins = stringtoarray(seed.bin);
+
+    for (var i = 0; i < array.length; i++){
+        var currentIndex = searchChar(array[i], unicode);
+        var newIndex;
+        if (bins[redux(i, bins.length)] == 1){
+            //sumate
+            newIndex = currentIndex - sum;
+            newIndex = redux(newIndex, unicode.length);
+
+        }else{
+            //restate
+            newIndex = currentIndex + sum;
+            newIndex = redux(newIndex, unicode.length);
+
+        }
+        array[i] = unicode[newIndex];
+    }
+
+    return arraytostring(array);
+}
+
+
+var txt = "penis dabit cul petit";
+console.log("encrypted: " + encrypt(txt, seed));
+console.log("decrypted: " + decrypt(encrypt(txt, seed), seed));
 
 
 function stringtoarray(string){
@@ -46,7 +81,6 @@ function arraytostring(array){
 
 function redux(y, range){ 
     var x = y;
-    console.log(x);
     if (x > range){
         while (x > range){
             x -= range;
@@ -59,30 +93,11 @@ function redux(y, range){
     return x;
 }
 
-
-// function offsetarray (array, index, sum, sign){
-//     var result = 0;
-//     if (sign == 1){
-//         var result = index + sum;
-//     }else{
-//         var result = index - sum;
-//     }
-
-//     if (sign == 1) {
-//         if (result > array.length){
-//             while (result > array.length){
-//                 result -= array.length;
-//             }
-//         }
-//     }
-
-//     if (sign == 0) {
-//         if (result < 0){
-//             while (result < 0){
-//                 result += array.length;
-//             }
-//         }
-//     }
-
-//     return result;
-// }
+function searchChar(char, array){
+    for (var i = 0; i < array.length; i++){
+        if (char == array[i]){
+            return i;
+        }
+    }
+    return undefined;
+}

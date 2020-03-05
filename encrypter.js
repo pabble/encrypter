@@ -8,9 +8,10 @@ var seed = {
 
 function encrypt (input, seed) {
     var array = stringtoarray(input);
+    var bins = stringtoarray(seed.bin);
 
     for (var i = 0; i < array.length; i++){
-        
+        // if (bins[i])
     }
 
     return arraytostring(array);
@@ -64,4 +65,8 @@ function arraytostring(array){
         str = str + array[i];
     }
     return str;
+}
+
+function redux(x, y){
+    
 }

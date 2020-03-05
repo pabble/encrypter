@@ -19,6 +19,7 @@ function encrypt (input, seed) {
 
         }else{
             //restate
+            
         }
     }
 
@@ -26,11 +27,6 @@ function encrypt (input, seed) {
 }
 
 console.log("encrypted: " + encrypt("pÄnis", seed));
-
-
-
-
-
 
 
 function stringtoarray(string){

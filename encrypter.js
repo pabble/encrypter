@@ -1,7 +1,7 @@
 //change values as desired
 var seed = {
     dec: 777,
-    bin: 1001011001
+    bin: "1001011001"
 }
 
 var unicode = [];
@@ -15,18 +15,17 @@ function encrypt (input, seed) {
     for (var i = 0; i < array.length; i++){
         if (bins[redux(i, bins.length)] == 1){
             //sumate
-            
 
         }else{
             //restate
-            
+
         }
     }
 
     return arraytostring(array);
 }
 
-console.log("encrypted: " + encrypt("pÄnis", seed));
+console.log("encrypted: " + encrypt("penis dabit cul gros", seed));
 
 
 function stringtoarray(string){
@@ -45,7 +44,9 @@ function arraytostring(array){
     return str;
 }
 
-function redux(x, range){
+function redux(y, range){ 
+    var x = y;
+    console.log(x);
     if (x > range){
         while (x > range){
             x -= range;

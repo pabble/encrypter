@@ -1,68 +1,78 @@
+var txt = "penis dabit cul petit";
+console.log("encrypted: " + encrypt(txt, seed));
+console.log("decrypted: " + decrypt(encrypt(txt, seed), seed));
+
+
 //change values as desired
 var seed = {
-    dec: 1,
+    dec: -2,
     bin: "1001011001"
 }
 
 var unicode = [];
 for (i = 0; i < 1114112; i++) { unicode.push(String.fromCharCode(i)); };
 
+
+
 function encrypt (input, seed) {
+
     var array = stringtoarray(input);
     var sum = seed.dec;
     var bins = stringtoarray(seed.bin);
 
     for (var i = 0; i < array.length; i++){
+    
         var currentIndex = searchChar(array[i], unicode);
         var newIndex;
+    
         if (bins[redux(i, bins.length)] == 1){
-            //sumate
             newIndex = currentIndex + sum;
             newIndex = redux(newIndex, unicode.length);
-
         }else{
-            //restate
             newIndex = currentIndex - sum;
             newIndex = redux(newIndex, unicode.length);
-
         }
+
         array[i] = unicode[newIndex];
+    
     }
 
     return arraytostring(array);
+
 }
+
+
 
 function decrypt (input, seed){
+
     var array = stringtoarray(input);
     var sum = seed.dec;
     var bins = stringtoarray(seed.bin);
 
     for (var i = 0; i < array.length; i++){
+    
         var currentIndex = searchChar(array[i], unicode);
         var newIndex;
+    
         if (bins[redux(i, bins.length)] == 1){
-            //sumate
             newIndex = currentIndex - sum;
             newIndex = redux(newIndex, unicode.length);
-
         }else{
-            //restate
             newIndex = currentIndex + sum;
             newIndex = redux(newIndex, unicode.length);
-
         }
+
         array[i] = unicode[newIndex];
+    
     }
 
     return arraytostring(array);
+
 }
 
 
-var txt = "penis dabit cul petit";
-console.log("encrypted: " + encrypt(txt, seed));
-console.log("decrypted: " + decrypt(encrypt(txt, seed), seed));
 
-
+//functions
 function stringtoarray(string){
     var arr = [];
     for (var i = 0; i < string.length; i++){

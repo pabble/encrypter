@@ -1,17 +1,9 @@
-var txt = "penis dabit cul petit";
-console.log("encrypted: " + encrypt(txt, seed));
-console.log("decrypted: " + decrypt(encrypt(txt, seed), seed));
 
+// pabble's encrypter v1.0 | (c) 2020 Pabble Studios, Inc. | https://pabble.github.io/
 
-//change values as desired
-var seed = {
-    dec: -2,
-    bin: "1001011001"
-}
 
 var unicode = [];
 for (i = 0; i < 1114112; i++) { unicode.push(String.fromCharCode(i)); };
-
 
 
 function encrypt (input, seed) {

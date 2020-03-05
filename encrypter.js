@@ -25,7 +25,7 @@ function encrypt (input, seed) {
     return arraytostring(array);
 }
 
-console.log("encrypted: " + encrypt("penis dabit cul gros", seed));
+console.log("encrypted: " + encrypt("penis dabit cul petit", seed));
 
 
 function stringtoarray(string){

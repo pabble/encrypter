@@ -12,8 +12,8 @@ a simple but extremely powerful encryption/decryption engine.
 var text = "this is going to be encrypted";
 
 var seed = {
-  dec: 12345,
-  bin: "01101101"
+  dec: 12345, //any decimal number, without restriction
+  bin: "01101101" //any sequence of 0's and 1's. It must be a string
 };
 
 var encrypted = encrypt(text, seed);

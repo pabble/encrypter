@@ -17,4 +17,5 @@ var seed = {
 };
 
 var encrypted = encrypt(text, seed);
+
 ```

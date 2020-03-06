@@ -8,7 +8,7 @@ a simple but extremely powerful encryption/decryption engine.
 
 
 ### usage:
-```
+```javascript
 var text = "this is going to be encrypted";
 
 var seed = {

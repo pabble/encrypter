@@ -1,5 +1,5 @@
 # pabble's encrypter
-[archived > update soon]
+[archived > update soon]<br>
 a simple but extremely powerful encryption/decryption engine.
 
 ### features:
